@@ -10,4 +10,19 @@ import analysis.StatisticalAnalysis;
 
 public class Application {
     private View printer = new View();
+    public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
+
+        if(args.length == 2) {
+            Application app = new Application();
+            app.start(args);
+        } else {
+            new View().printMessage("Wrong arguments!\nProper command:\njava Application file1.txt file2.txt");
+        }
+
+        long endTime = System.currentTimeMillis();
+        double elapsedTime = (endTime - startTime) / 1000.0;
+        new View().printMessage("Benchmark time: " + elapsedTime + " secs");
+
+    }
 }
