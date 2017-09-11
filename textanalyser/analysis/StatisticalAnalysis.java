@@ -43,4 +43,18 @@ public class StatisticalAnalysis {
         return count;
     }
 
+    public int dictionarySize() {
+        return this.itemsOccurencies.size();
+    }
+
+    public int size() {
+        int totalElementsCount = 0;
+
+        for(String element : this.itemsOccurencies.keySet()) {
+            totalElementsCount += this.itemsOccurencies.get(element);
+        }
+
+        return totalElementsCount;
+    }
+
 }
