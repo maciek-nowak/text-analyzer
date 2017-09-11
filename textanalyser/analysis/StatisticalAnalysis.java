@@ -57,4 +57,18 @@ public class StatisticalAnalysis {
         return totalElementsCount;
     }
 
+    public Set<String> occurMoreThan(Integer occurencyLimit) {
+        LinkedHashSet<String> frequentElements = new LinkedHashSet<>();
+
+        for(String element : this.itemsOccurencies.keySet()) {
+
+            if(this.itemsOccurencies.get(element) > occurencyLimit) {
+                frequentElements.add(element);
+            }
+
+        }
+
+        return frequentElements;
+    }
+
 }
