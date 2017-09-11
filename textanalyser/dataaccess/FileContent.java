@@ -24,3 +24,32 @@ public class FileContent implements IterableText {
             throw e;
         }
     }
+
+    public Iterator<String> charIterator() {
+        return new CharIterator(this);
+    }
+
+    public Iterator<String> wordIterator() {
+        return new WordIterator(this);
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public static void main(String[] args) {
+        FileContent fileContentr = null;
+        try {
+            fileContentr = new FileContent("dsf");
+        } catch (FileNotFoundException e) {
+            System.out.println("Niema");
+        }
+
+        Iterator<String> wordIterator = fileContentr.wordIterator();
+
+        while(wordIterator.hasNext()) {
+            System.out.println(wordIterator.next());
+        }
+    }
+
+}
