@@ -10,6 +10,21 @@ import analysis.StatisticalAnalysis;
 
 public class Application {
     private View printer = new View();
+    private void start(String[] args) {
+
+        for(String arg: args) {
+
+            try {
+                FileContent fileContent = new FileContent(arg);
+                testAndPrint(fileContent);
+            }  catch (FileNotFoundException e) {
+                System.out.println("\nFile " + arg +  " not found!");
+            }
+
+        }
+
+    }
+
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
 
