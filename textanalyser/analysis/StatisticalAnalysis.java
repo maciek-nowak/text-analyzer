@@ -32,4 +32,15 @@ public class StatisticalAnalysis {
         }
 
     }
+
+    public int countOf(String... elements) {
+        int count = 0;
+
+        for(String element : elements) {
+            count += this.itemsOccurencies.getOrDefault(element, 0);
+        }
+
+        return count;
+    }
+
 }
